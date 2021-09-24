@@ -1,0 +1,41 @@
+/* Paleta de Colores
+Fondo: #808080
+Naranja: #fd9927
+Blanco: #ffffff
+*/
+
+*{
+background-color: #808080;
+color: #ffffff;
+}
+
+/* BUTTONS */
+.btn{
+    background-color: #fd9927;
+    color:#ffffff;
+    border-color: #fd9927;
+}
+.btn:disabled{
+    background-color: #fd9927;
+    color:#ffffff;
+    border-color: #fd9927;
+}
+.btn:hover{
+    background-color: #ffffff;
+    color:#fd9927;
+    border-color: #fd9927;
+}
+/* INPUT */
+.form-label:focus{
+    background-color: #ffffff;
+    color:#fd9927;
+    border-color: #fd9927;
+    box-shadow: #fd9927;
+}
+
+.form-label{
+    
+    color:#fd9927;
+    border-color: #fd9927;
+    box-shadow: #fd9927;
+}
