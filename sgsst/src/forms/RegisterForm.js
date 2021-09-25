@@ -8,6 +8,10 @@ function RegisterForm() {
   const [value, setValue] = useState({
     ruc: 0,
     raz_social: "",
+    rep_legal: "",
+    mail:"",
+    telefono:0,
+    password:""
   });
   const history = useHistory()
 

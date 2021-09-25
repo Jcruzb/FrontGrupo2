@@ -25,6 +25,56 @@ function FormRegister({ value, updateCompany, setValue, manejarSubmit }) {
           onChange={(e) => {updateCompany(e);}}
           />
         </div>
+        <div className="mb-3">
+          <label className="form-label">Representante legal</label>
+          <input 
+          type="text" 
+          className="form-control" 
+          name="rep_legal"
+          value={value.rep_legal}
+          onChange={(e) => {updateCompany(e);}}
+          />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Correo</label>
+          <input 
+          type="mail" 
+          className="form-control" 
+          name="mail"
+          value={value.mail}
+          onChange={(e) => {updateCompany(e);}}
+          />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Celular</label>
+          <input 
+          type="number" 
+          className="form-control" 
+          name="telefono"
+          value={value.telefono}
+          onChange={(e) => {updateCompany(e);}}
+          />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Contraseña</label>
+          <input 
+          type="password" 
+          className="form-control" 
+          name="password"
+          value={value.password}
+          onChange={(e) => {updateCompany(e);}}
+          />
+        </div>
+        {/* <div className="mb-3">
+          <label className="form-label">Vigencia de Poder</label>
+          <input 
+          type="file" 
+          className="form-control" 
+          name="vig_pod"
+          value={value.vig_pod}
+          onChange={(e) => {updateCompany(e);}}
+          />
+        </div> */}
 
         <button type="submit" className="btn btn-primary">
           Registrarse
