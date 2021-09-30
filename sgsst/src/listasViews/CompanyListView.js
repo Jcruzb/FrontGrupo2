@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getCompanies } from "../services/registerServices";
 
-function CompanyList() {
+function CompanyListView() {
   const [companies, setcompanies] = useState([]);
 
   const getAllCompanies = async () => {
@@ -48,4 +48,4 @@ function CompanyList() {
   );
 }
 
-export default CompanyList;
+export default CompanyListView;

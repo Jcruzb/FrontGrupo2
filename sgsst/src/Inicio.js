@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 //import 'bootstrap/dist/css/bootstrap.min.css'
-import portada from "./assets/portada3.png";
+import portada from "./assets/portada3.jpg";
 //
 import logo from "./assets/Optimiza-reduccion.png";
 
 import { Link } from "react-router-dom";
-import LoginForm from "./forms/LoginForm";
+import LoginFormView from "./formsViews/LoginFormView";
 
 function Inicio() {
   const [ruc, setRuc] = useState("");
@@ -24,11 +24,17 @@ function Inicio() {
       <div className="d-flex mt-5">
         <div
           className="d-flex col-xl-5 col-lg-6 col-md-5  d-none d-md-block rounded"
-          style={{
-            backgroundImage: `url(${portada})`,
-            backgroundPosition: "Center top",
-          }}
-        ></div>
+          
+          
+        >
+          <img
+            className="justify-content-center"
+            src={portada}
+            fluid
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center " }}
+          />
+        </div>
+        
 
         <div className="m-5 col">
           <div className="Login">
@@ -38,7 +44,7 @@ function Inicio() {
             
 
 
-           <LoginForm/>
+           <LoginFormView/>
            
            
            

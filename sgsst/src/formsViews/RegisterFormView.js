@@ -4,7 +4,7 @@ import { registerCompany } from "../services/registerServices";
 import Swal from "sweetalert2";
 import {useHistory} from "react-router-dom"
 
-function RegisterForm() {
+function RegisterFormView() {
   const [value, setValue] = useState({
     ruc: 0,
     raz_social: "",
@@ -48,4 +48,4 @@ function RegisterForm() {
   );
 }
 
-export default RegisterForm;
+export default RegisterFormView;
