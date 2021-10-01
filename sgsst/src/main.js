@@ -18,7 +18,7 @@ function main() {
       <div className="row row-cols-1 row-cols-md-2 g-4">
         <div className="col">
           <div className="card">
-            <img src={accident} classNameName="card-img-top" style={{ width: "100%", height: "300px", objectFit: "cover", objectPosition: "center center "}} />
+            <img src={accident} className="card-img-top" style={{ width: "100%", height: "300px", objectFit: "cover", objectPosition: "center center "}} />
             <div className="card-body">
               <Link className="btn " to="/Incidentslist">
                 Eventos
@@ -28,7 +28,7 @@ function main() {
         </div>
         <div className="col">
           <div className="card">
-            <img src={empleador} className="card-img-top"style={{ width: "100%", height: "300px", objectFit: "cover", objectPosition: "center center "}} />
+            <img src={empleador} className="card-img-top" style={{ width: "100%", height: "300px", objectFit: "cover", objectPosition: "center center "}} />
             <div className="card-body">
             <Link className="btn " to="/workerslist">
                 Lista de trabajadores
