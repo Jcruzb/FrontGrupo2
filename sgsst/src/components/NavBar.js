@@ -1,11 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Optimiza-reduccion.png";
-
+import { getCompanies } from "../services/registerServices";
 
 function NavBar() {
   const [estaColapsado, setEstaColapsado] = useState(true);
   const manejarNavbar = () => setEstaColapsado(!estaColapsado);
+
+
+  const [companies, setcompanies] = useState([]);
+
+  const getAllCompanies = async () => {
+    try {
+      const getedCompanies = await getCompanies();
+      setcompanies(getedCompanies);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAllCompanies();
+  }, []);
+
+ 
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light bg-navbar">
@@ -33,7 +51,7 @@ function NavBar() {
                 Inicio
               </Link>
             </li>
-            
+
             <li className="nav-item">
               <Link className="nav-link" to="/workerslist">
                 Trabajadores
@@ -51,6 +69,15 @@ function NavBar() {
                 <Link className="nav-link" to="/">
                   Salir
                 </Link>
+              </li>
+            </ul>
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                {companies.map((item, i) => (
+                  <tr key={i}>
+                    <td>{item.ruc}</td>
+                  </tr>
+                ))}
               </li>
             </ul>
           </div>

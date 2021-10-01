@@ -83,6 +83,9 @@ function FormIncident({
           />
         </div>
 
+      
+
+
         <div className="row justify-content-around m-3">
           <button className="btn btn-success col-4" type="submit">
             Reportar
