@@ -21,7 +21,7 @@ function FormLogin({ value, logCompany, setValue, manejarSubmit }) {
           <Form.Control
             className="inpt"
             placeholder="ingresar ruc"
-            title="Ingresar números"
+            title="Ingresar RUC"
             required
             autoFocus
             type="number"
