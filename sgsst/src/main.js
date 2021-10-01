@@ -27,7 +27,7 @@ function main() {
           </div>
         </div>
         <div className="col">
-          <div className="card"style={{  height: "300px" }}>
+          <div className="card">
             <img src={empleador} className="card-img-top"style={{ width: "100%", height: "300px", objectFit: "cover", objectPosition: "center center "}} />
             <div className="card-body">
             <Link className="btn " to="/workerslist">
