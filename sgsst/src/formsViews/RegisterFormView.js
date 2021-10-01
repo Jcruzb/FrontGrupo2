@@ -31,7 +31,7 @@ function RegisterFormView() {
         showConfirmButton: false,
         timer: 1500,
       });
-        history.push("/companylist")
+        history.push("/")
     } catch (error) {
       console.log(error);
     }

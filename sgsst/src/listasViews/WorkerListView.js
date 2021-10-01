@@ -53,7 +53,7 @@ function WorkerListView() {
                         <td>{item.phone}</td>
                         <td>{item.mail}</td>
                         <td>
-                        <Link className="btn btn-warning btn-sm" to={`/editWorker/${item.id}`}>
+                        <Link className="btn btn-warning btn-sm" to={`/editWorker/${item.ruc}`}>
                             Editar
                         </Link>
                         </td>
