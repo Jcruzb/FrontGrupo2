@@ -8,7 +8,7 @@ function NavBar() {
   const manejarNavbar = () => setEstaColapsado(!estaColapsado);
 
 
-  const [companies, setcompanies] = useState([]);
+ /*  const [companies, setcompanies] = useState([]);
 
   const getAllCompanies = async () => {
     try {
@@ -21,7 +21,7 @@ function NavBar() {
 
   useEffect(() => {
     getAllCompanies();
-  }, []);
+  }, []); */
 
  
 
@@ -71,7 +71,7 @@ function NavBar() {
                 </Link>
               </li>
             </ul>
-            <ul className="navbar-nav">
+            {/* <ul className="navbar-nav">
               <li className="nav-item">
                 {companies.map((item, i) => (
                   <tr key={i}>
@@ -79,7 +79,7 @@ function NavBar() {
                   </tr>
                 ))}
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>
