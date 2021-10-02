@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
+
 function FormLogin({ value, logCompany, setValue, manejarSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -12,7 +13,6 @@ function FormLogin({ value, logCompany, setValue, manejarSubmit }) {
 //   function validateForm() {
 //     return ruc.length >= 10 && password.length > 0;
 //   }
-
   return (
     <div>
       <Form onSubmit={manejarSubmit}>
@@ -27,7 +27,8 @@ function FormLogin({ value, logCompany, setValue, manejarSubmit }) {
             type="number"
             name="ruc"
             value={value.ruc}
-            onChange={(e) => {logCompany(e);}}
+            onChange={(e) => {logCompany(e);
+            }}
           />
         </Form.Group>
         <Form.Group size="lg" className="text-left">
