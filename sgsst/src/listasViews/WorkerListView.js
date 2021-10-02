@@ -3,10 +3,15 @@ import NavBar from '../components/NavBar';
 import { getWorker } from '../services/WorkerServices';
 import { getCompanies } from '../services/registerServices';
 import {Link} from "react-router-dom"
+import { deleteWorker } from '../services/WorkerServices';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
 function WorkerListView() {
+
 
     const [workers, setworkers] = useState([]);
 
@@ -20,8 +25,13 @@ function WorkerListView() {
         }
     }
 
+   
+   
+
+
     useEffect(()=>{
         getworkers()
+
     },[])
 
 
@@ -30,8 +40,9 @@ function WorkerListView() {
   const getAllCompanies = async () => {
     try {
       const getedCompanies = await getCompanies();
-        companies.id = workers.EmpresaId
+        
       setcompanies(getedCompanies);
+      companies.id = workers.EmpresaId
     } catch (error) {
       console.log(error);
     }
@@ -56,9 +67,10 @@ function WorkerListView() {
                        <th>Apellido</th>
                        <th>DNI</th>
                        <th>Puesto de trabajo</th>
-                       <th>Empresa</th>
+                       {/* <th>Empresa</th> */}
                        <th>correo</th>
-                       <th>Editar</th>
+                       <th>Acciones</th>
+                       
                        
                    </tr>
                </thead>
@@ -69,14 +81,25 @@ function WorkerListView() {
                         <td>{item.last_name}</td>
                         <td>{item.dni}</td>
                         <td>{item.job}</td>
-                        {companies.map((comp,i)=>(
+                        {/* <td>{item.EmpresaId}</td> */}
+
+                        {/* <td>{companies.id}</td> */}
+                        {/* {companies.map((comp,i)=>(
                         <td>{comp.raz_social}</td>
-                        ))}
+                        ))} */}
                         <td>{item.mail}</td>
-                        <td>
-                        <Link className="btn btn-warning btn-sm" to={`/editWorker/${item.id}`}>
-                            Editar
+                        <td className="col-5">
+                        <Link className="btn-lg" to={`/editWorker/${item.id}`}>
+
+                        <FontAwesomeIcon icon={faEdit} />
+
                         </Link>
+                        &nbsp;
+                        <button className="btn-md" onClick={(e)=>{deleteWorker(item.id)}}>
+                        <FontAwesomeIcon icon={faTrash} />
+                        {/* {window.location.reload(true)} */}
+                        </button>
+                        
                         </td>
                     </tr>
                    ))}

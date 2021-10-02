@@ -104,7 +104,7 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit, companies })
             />
           </div>
             
-          <div>
+          {/* <div>
             <label className="form-label col-12">Empresa</label>
             <select 
               className="form-control"
@@ -118,7 +118,7 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit, companies })
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
           <div className="row justify-content-around m-3">
             <button className="btn btn-success col-4" type="submit">
               Guardar

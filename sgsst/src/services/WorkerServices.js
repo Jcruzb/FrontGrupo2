@@ -30,7 +30,7 @@ const editWorker = async(editWorker, id) =>{
         let headers ={
             "Content-Type":"application/json"
         }
-        let { data } = await axios.put(`http://localhost:3001/workersview${id}`, editWorker, {headers})
+        let { data } = await axios.put(`http://localhost:3001/workersview/${id}`, editWorker, {headers})
         return data
         
     } catch (error) {
@@ -41,8 +41,19 @@ const editWorker = async(editWorker, id) =>{
 
 const getWorkerForPk = async (id) =>{
     try {
-        let { data } = await axios.get(`${URL}/${id}`)
+        let { data } = await axios.get(`http://localhost:3001/workersview/${id}`)
         return data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const deleteWorker = async (id) =>{
+    try {
+        let { data } = await axios.delete(`http://localhost:3001/workersview/${id}`)
+        window.location.reload(true)
+        return data
+        
     } catch (error) {
         console.log(error)
     }
@@ -52,5 +63,6 @@ export{
     getWorker,
     newWorker,
     editWorker,
-    getWorkerForPk
+    getWorkerForPk,
+    deleteWorker
 }

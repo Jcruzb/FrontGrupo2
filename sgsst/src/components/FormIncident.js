@@ -24,7 +24,7 @@ function FormIncident({ value, incidentReport, setValue, manejarSubmit, companie
               className="form-text col-12"
               style={{ color: "white" }}
               type="text"
-              placeholder="nombres"
+              placeholder="Describa lo ocurrido"
               name="descripcion"
               value={value.descripcion}
               onChange={(e) => {

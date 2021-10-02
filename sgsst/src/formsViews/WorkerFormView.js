@@ -39,7 +39,7 @@ function CreateWorker() {
             showConfirmButton: false,
             timer: 1500
           })
-          history.push("/main")
+          history.push("/workerslist")
        } catch (error) {
            console.log(error)
            

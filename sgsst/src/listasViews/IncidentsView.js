@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import NavBar from '../components/NavBar';
-import { getIncidents } from '../services/IncidentServices';
+import { getIncidentForPk } from '../services/IncidentServices';
 import {Link} from "react-router-dom"
 import { useParams } from 'react-router';
 
@@ -13,8 +13,8 @@ function IncidentsView() {
    
     const getAllIncidents = async ()=>{
         try {
-            const Incidentsgetet = await getIncidents ()
-            setIncidents(Incidentsgetet)
+            const Incidentsgetet = await getIncidentForPk (id)
+            setIncidents(...Incidentsgetet)
             
         } catch (error) {
             console.log(error)
@@ -28,10 +28,7 @@ function IncidentsView() {
     return (
         <div>
             <NavBar/>
-            <h1>Eventos Reportados</h1>
-            <Link className="btn btn-primary btn-lg my-2" to="/reportincident">
-             Reportar un Evento
-            </Link>
+           
            <table className="table">
                <thead>
                    <tr>
@@ -39,23 +36,16 @@ function IncidentsView() {
                        <th>Fecha de Ocurrencia</th>
                        <th>Nº de afectados</th>
                        
-                       {/* <th>Acción</th> */}
-                       
-                       
                    </tr>
                </thead>
-               <tbody>
+               <tbody >
                    {incidents.map((item,i)=>(
                     <tr key={i}>
                         <td>{item.descripcion}</td>
                         <td>{item.fecha}</td>
                         <td>{item.nafectados}</td>
                        
-                        {/* <td>
-                        <Link className="btn btn-warning btn-sm" to={`/incidentview/${item.id}`}>
-                            Detallar
-                        </Link>
-                        </td> */}
+                       
                     </tr>
                    ))}
                </tbody>

@@ -24,7 +24,7 @@ function EditarTrabajador() {
         EmpresaId:"",
     })
 
-    const actualizarTrabajador = (e)=>{
+    const updateWorker = (e)=>{
         e.preventDefault()
         setValue({
             ...value,
@@ -42,7 +42,7 @@ function EditarTrabajador() {
                 showConfirmButton: false,
                 timer: 1500
               })
-              history.push("/listaTrabajador")
+              history.push("/workerslist")
            } catch (error) {
                console.log(error)
                
@@ -86,7 +86,7 @@ function EditarTrabajador() {
             value={value}
             companies={companies}
             setValue={setValue}
-            actualizarTrabajador={actualizarTrabajador}
+            updateWorker={updateWorker}
             manejarSubmit={manejarSubmit}
             >
 

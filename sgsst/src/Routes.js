@@ -7,6 +7,7 @@ import WorkerListview from './listasViews/WorkerListView'
 import ReportIncident from './formsViews/ReportIncidentView'
 import IncidentsListView from './listasViews/IncidentsListView'
 import EditarTrabajador from './formsViews/EditWorkerView'
+import IncidentsView from './listasViews/IncidentsView'
 
 
 
@@ -31,10 +32,12 @@ function Routes() {
             <Route  path="/editWorker/:id" component={EditarTrabajador} />
 
             {/* <Route  path="/editWorker/:id" component={EditarTrabajador} /> */}
-
+{/* /verIncident */}
             {/* Incidents */}
             <Route  path="/reportincident" exact component={ReportIncident} />
             <Route  path="/Incidentslist" exact component={IncidentsListView} />
+            <Route  path="/incidentview/:id" component={IncidentsView} />
+
 
 
 
