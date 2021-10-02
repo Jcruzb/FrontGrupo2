@@ -1,9 +1,7 @@
 import React, { useState} from "react";
 import trabajadores from "../assets/trabajaores.jpg";
-import FormLogin from "./FormLogin";
 
-
-function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
+function FormWorker({ value, updateWorker, setValue, manejarSubmit, companies }) {
   
   
   return (
@@ -22,7 +20,6 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
           }}
           className="col-md-6 col-lg-6 col-xl-5"
         >
-          <p> Your name is :{FormLogin.ruc}</p>
           <div>
             <label className="form-label col-12">Nombres</label>
             <input
@@ -106,7 +103,22 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
               }}
             />
           </div>
-
+            
+          <div>
+            <label className="form-label col-12">Empresa</label>
+            <select 
+              className="form-control"
+              name="EmpresaId"
+              value={value.EmpresaId}
+              onChange={(e) => {updateWorker(e);}}
+            >
+            {companies.map((cat, i) => (
+                <option key={i} value={cat.id}>
+                  {cat.raz_social}
+                </option>
+              ))}
+            </select>
+          </div>
           <div className="row justify-content-around m-3">
             <button className="btn btn-success col-4" type="submit">
               Guardar
