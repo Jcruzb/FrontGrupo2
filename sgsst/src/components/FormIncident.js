@@ -30,7 +30,7 @@ function FormIncident({
         <div>
           <label className="form-label col-12">Describa el evento</label>
           <textarea
-            className="form-text col-12"
+            className="form-text col-12" style={{color:"white"}}
             type="text"
             placeholder="nombres"
             name="description"
@@ -44,7 +44,7 @@ function FormIncident({
         <div>
           <label className="form-label col-12">Fecha de ocurrencia</label>
           <input
-            className="form-text col-12"
+            className="form-text col-12" style={{color:"white"}}
             type="date"
             placeholder="fecha del evento"
             name="incident_date"
@@ -58,7 +58,7 @@ function FormIncident({
         <div>
           <label className="form-label col-12">Ingrese el número de afectados</label>
           <input
-            className="form-text col-12"
+            className="form-text col-12" style={{color:"white"}}
             type="number"
             placeholder="2"
             name="affected"
@@ -72,7 +72,7 @@ function FormIncident({
         <div>
           <label className="form-label col-12">Reportado por</label>
           <input
-            className="form-text col-12"
+            className="form-text col-12" style={{color:"white"}}
             type="text"
             placeholder="Ingrese el nombre del afectado"
             name="name"
