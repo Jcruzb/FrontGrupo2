@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import FormWorker from '../components/FormWorker';
-import NavBar from '../../components/NavBar';
-import {editarTrabajador, obtenerTrabajadorPorId} from "../../services/trabajadoresServices"
+import NavBar from '../components/NavBar';
+import {editWorker, getWorkerForPk} from "../services/WorkerServices"
 import { useParams } from 'react-router'
 import Swal from "sweetalert2";
 import {useHistory} from "react-router-dom"
+import { getCompanies } from '../services/registerServices';
+
 
 
 function EditarTrabajador() {
@@ -13,12 +15,13 @@ function EditarTrabajador() {
     const history = useHistory();
 
     const [value, setValue] = useState ({
-        nombre:"",
-        apellido:"",
+        name:"",
+        last_name:"",
         dni:"",
-        area:"",
-        puesto:"",
-        tra_sctr:"",
+        job:"",
+        phone:"",
+        mail:"",
+        EmpresaId:"",
     })
 
     const actualizarTrabajador = (e)=>{
@@ -32,7 +35,7 @@ function EditarTrabajador() {
     const manejarSubmit = async (e) =>{
         e.preventDefault(id)
         try {
-            await editarTrabajador(value,id)
+            await editWorker(value,id)
             await Swal.fire({
                 icon: 'success',
                 title: '¡Trabajador Editado exitosamente!',
@@ -47,7 +50,7 @@ function EditarTrabajador() {
 
            const getTrabajador =async()=>{
             try {
-                let trabajadorObtenido = await obtenerTrabajadorPorId(id)
+                let trabajadorObtenido = await getWorkerForPk(id)
                 setValue({...trabajadorObtenido})
                 console.log(trabajadorObtenido)
     
@@ -59,18 +62,35 @@ function EditarTrabajador() {
             getTrabajador()
         },[])
 
+
+        const [companies, setcompanies] = useState([]);
+
+    const getAllCompanies = async () => {
+        try {
+        const getedCompanies = await getCompanies();
+        setcompanies(getedCompanies);
+        } catch (error) {
+        console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        getAllCompanies();
+    }, []);
+
     return (
         <div className="container">
             <NavBar/>
             <h1>Editar Trabajador</h1>
-            <FormTrabajador
+            <FormWorker
             value={value}
+            companies={companies}
             setValue={setValue}
             actualizarTrabajador={actualizarTrabajador}
             manejarSubmit={manejarSubmit}
             >
 
-            </FormTrabajador>
+            </FormWorker>
         </div>
     )
 }
