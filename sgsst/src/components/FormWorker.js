@@ -1,7 +1,6 @@
 import React, { useState} from "react";
 import trabajadores from "../assets/trabajaores.jpg";
-
-
+import FormLogin from "./FormLogin";
 
 
 function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
@@ -16,17 +15,18 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
         Registro de Trabajadores
       </h2>
       {/* Formulario */}
-      <div className="d-flex mt-3 rounded shadow justify-content-around">
+      <div className="d-flex mt-3 rounded shadow justify-content-around" style={{color:"white"}}>
         <form
           onSubmit={(e) => {
             manejarSubmit(e);
           }}
           className="col-md-6 col-lg-6 col-xl-5"
         >
+          <p> Your name is :{FormLogin.ruc}</p>
           <div>
             <label className="form-label col-12">Nombres</label>
             <input
-              className="form-text col-12"
+              className="form-text col-12" style={{color:"white"}}
               type="text"
               placeholder="nombres"
               name="name"
@@ -40,7 +40,7 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
           <div>
             <label className="form-label col-12">Apellidos</label>
             <input
-              className="form-text col-12"
+              className="form-text col-12" style={{color:"white"}}
               type="text"
               placeholder="apellidos"
               name="last_name"
@@ -54,7 +54,7 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
           <div>
             <label className="form-label col-12">DNI</label>
             <input
-              className="form-text col-12"
+              className="form-text col-12" style={{color:"white"}}
               type="number"
               placeholder="00000000"
               name="dni"
@@ -68,7 +68,7 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
           <div>
             <label className="form-label col-12">Puesto de Trabajo</label>
             <input
-              className="form-text col-12"
+              className="form-text col-12" style={{color:"white"}}
               type="text"
               placeholder="Puesto de trabajo"
               name="job"
@@ -82,7 +82,7 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
           <div>
             <label className="form-label col-12">Teléfono celular</label>
             <input
-              className="form-text col-12"
+              className="form-text col-12" style={{color:"white"}}
               type="number"
               placeholder="Teléfono"
               name="phone"
@@ -96,7 +96,7 @@ function FormWorker({ value, updateWorker, setValue, manejarSubmit }) {
           <div>
             <label className="form-label col-12">Correo electrónico</label>
             <input
-              className="form-text col-12"
+              className="form-text col-12" style={{color:"white"}}
               type="mail"
               placeholder="Correo electrónico"
               name="mail"
