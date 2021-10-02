@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import banner from "../assets/banner1.jpg";
 
 function FormIncident({ value, incidentReport, setValue, manejarSubmit, companies, workers }) {
+
+ 
   return (
     <div>
       {/* título */}
@@ -78,25 +80,25 @@ function FormIncident({ value, incidentReport, setValue, manejarSubmit, companie
               ))}
             </select>
           </div>
-              {workers.EmpresaId=companies.id}
-          <div>
+             
+          {/* <div>
             <label className="form-label col-12">Reportado por</label>
             <select 
               className="form-control"
               name="TrabajadorId"
               value={value.TrabajadorId}
-              onChange={(e) => {incidentReport(e);}}
+              onChange={(e) => {manejarFiltrotrabajador()}}
             >
             {workers.map((wo, e) => (
               
-
+              
 
                 <option key={e} value={wo.id}>
                   {wo.name && " " && wo.name}
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
 
           <div className="row justify-content-around m-3">
             <button className="btn btn-success col-4" type="submit">
