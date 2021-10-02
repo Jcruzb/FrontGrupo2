@@ -27,7 +27,8 @@ function LoginForm() {
         showConfirmButton: false,
         timer: 1500,
       });
-        history.push("/main")
+        history.push(`/main`)
+        
     } catch (error) {
       console.log(error);
     }
@@ -42,6 +43,11 @@ function LoginForm() {
       />
     </div>
   );
+   
 }
 
 export default LoginForm;
+
+
+
+

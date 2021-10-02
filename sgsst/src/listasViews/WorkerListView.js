@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import NavBar from '../components/NavBar';
 import { getWorker } from '../services/WorkerServices';
+import { getCompanies } from '../services/registerServices';
 import {Link} from "react-router-dom"
 
 
@@ -23,6 +24,24 @@ function WorkerListView() {
         getworkers()
     },[])
 
+
+    const [companies, setcompanies] = useState([]);
+
+  const getAllCompanies = async () => {
+    try {
+      const getedCompanies = await getCompanies();
+        companies.id = workers.EmpresaId
+      setcompanies(getedCompanies);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAllCompanies();
+  }, []);
+
+
     return (
         <div>
             <NavBar/>
@@ -37,7 +56,7 @@ function WorkerListView() {
                        <th>Apellido</th>
                        <th>DNI</th>
                        <th>Puesto de trabajo</th>
-                       <th>Teléfono</th>
+                       <th>Empresa</th>
                        <th>correo</th>
                        <th>Editar</th>
                        
@@ -50,10 +69,12 @@ function WorkerListView() {
                         <td>{item.last_name}</td>
                         <td>{item.dni}</td>
                         <td>{item.job}</td>
-                        <td>{item.phone}</td>
+                        {companies.map((comp,i)=>(
+                        <td>{comp.raz_social}</td>
+                        ))}
                         <td>{item.mail}</td>
                         <td>
-                        <Link className="btn btn-warning btn-sm" to={`/editWorker/${item.ruc}`}>
+                        <Link className="btn btn-warning btn-sm" to={`/editWorker/${item.id}`}>
                             Editar
                         </Link>
                         </td>
