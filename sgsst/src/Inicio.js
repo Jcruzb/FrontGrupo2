@@ -7,6 +7,8 @@ import logo from "./assets/Optimiza-reduccion.png";
 import { Link } from "react-router-dom";
 import LoginFormView from "./formsViews/LoginFormView";
 
+import './index.css';
+
 function Inicio() {
   const [ruc, setRuc] = useState("");
   const [password, setPassword] = useState("");
@@ -18,8 +20,8 @@ function Inicio() {
         <h1>GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO</h1>
       </div>
       {/* Div de Cajetin (ing y form) */}
-      <div className="d-flex mt-5">
-        <div className="d-flex col-xl-5 col-lg-6 col-md-5  d-none d-md-block rounded">
+      <div className="d-flex mt-5 main">
+        <div className="d-flex col-xl-5  d-none d-md-block rounded">
           <img
             className="justify-content-center"
             src={portada}

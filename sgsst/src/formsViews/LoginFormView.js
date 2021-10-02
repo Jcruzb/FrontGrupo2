@@ -6,7 +6,7 @@ import {useHistory} from "react-router-dom"
 
 function LoginForm() {
   const [value, setValue] = useState({
-    ruc: 0,
+    ruc: "",
     password:""
   });
   const history = useHistory()
