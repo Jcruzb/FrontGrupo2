@@ -28,13 +28,24 @@ color: #ffffff;
 /* INPUT */
 .form-label:focus{
     background-color: #ffffff;
+   
+    border-color: #fd9927;
+    box-shadow: #fd9927;
+}
+.btn:hover{
+    background-color: #ffffff;
+    color:#fd9927;
+    border-color: #fd9927;
+}
+
+
+.form-text{
+    background-color: #ffffff;
     color:#fd9927;
     border-color: #fd9927;
     box-shadow: #fd9927;
 }
-
-.form-label{
-    
-    border-color: #fd9927;
-    box-shadow: #fd9927;
+.input{
+    color:black;
+    font-weight: bold;
 }
